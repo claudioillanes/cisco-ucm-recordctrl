@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Recording</servlet-name>
+        <servlet-class>com.cisco.pt.cucmctrl.Recording</servlet-class>
+        <init-param>
+            <param-name>CUCMHost</param-name>
+            <param-value>10.10.3.21</param-value>
+        </init-param>
+        <init-param>
+            <param-name>CUCMJTapiUser</param-name>
+            <param-value>recording_control</param-value>
+        </init-param>
+        <init-param>
+            <param-name>CUCMJTapiPassword</param-name>
+            <param-value>C1sco12345</param-value>
+        </init-param>
+        <!--init-param>
+            <param-name>PlayTone</param-name>
+            <param-value>LOCAL</param-value>
+        </init-param>
+        <init-param>
+            <param-name>PhoneNotification</param-name>
+            <param-value>true</param-value>
+        </init-param-->
+        <load-on-startup>1</load-on-startup>
+        <async-supported>true</async-supported>
+    </servlet>
+    <!--servlet-mapping>
+        <servlet-name>Recording</servlet-name>
+        <url-pattern>/recording/*</url-pattern>
+    </servlet-mapping-->
+
+    <servlet>
+        <servlet-name>Monitoring</servlet-name>
+        <servlet-class>com.cisco.pt.cucmctrl.Monitor</servlet-class>
+        <!--init-param>
+            <param-name>PlayTone</param-name>
+            <param-value>LOCAL</param-value>
+        </init-param-->
+        <!--init-param>
+            <param-name>MonitorType</param-name>
+            <param-value>SILENT</param-value>
+        </init-param-->
+        <async-supported>true</async-supported>
+    </servlet>
+    <!--servlet-mapping>
+        <servlet-name>Monitoring</servlet-name>
+        <url-pattern>/monitor/*</url-pattern>
+    </servlet-mapping-->
+</web-app>
